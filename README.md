@@ -734,6 +734,12 @@ unset property_name
 ```
 or something similar. It will reduce manual boilerplate when put after `__OBJECT__.property()`. This code will be executed once, when object is instantiated. Then you can redefine whatever getters/setters you actually need to be more complicated. This will effectively override existing property methods.
 
+### 4. File naming and tooling
+
+Ba.sh is a framework, and does not dictate how to name or where to place your files. However, it's possible that your project uses tooling (e.g. IDE's, shellcheck, the bats testing framework, etc) that evaluates files based upon shebangs or file extensions. Just as Ba.sh is not meant to fight against bash, you do not need to fight your tooling.
+
+Shebangs indicating bash have been elided from these examples to keep them short, but there should be no problem having them in the class and constructor/library files. The examples here use file extensions as a convention to indicate the class and constructor/library files, you can choose a different convention. Note that `*.class` and `*.h` extensions may be mistaken for Java or C/++ material, and the `*.bash` extension indicates a shell script that is more bash-specific than `*.sh`.
+
 ## Q&A
 
 ### Why not just use Python?
